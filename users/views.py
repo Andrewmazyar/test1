@@ -6,5 +6,6 @@ from users.models import User
 # Create your views here.
 class UsersListView(ListView):
     model = User
-    template_name = 'users/users_page.html'
+    template_name = 'users_page.html'
     context_object_name = 'users_list'
+    queryset = User.objects.select_related('groups').all()

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+{% if request.user.is_authenticated %}
+    <button type="button" class="btn btn-sm btn-success" onclick="register_child(1)">
+        Add Group
+    </button>
+{% endif %}
+
+{% for group in groups_list %}
+    <div class="col-6">
+
+        <div class="card">
+            <p class="card-text">
+                id: {{ group.id }}<br>
+                Name of Groups: {{ group.name }}<br>
+                Description: {{ group.description }}
+            </p>
+            <p>
+                {% if request.user.is_authenticated %}
+                  <button type="button" class="btn btn-sm btn-success" onclick="register_child(1)">
+                    Подати заявку
+                  </button>
+                {% endif %}
+            </p>
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}
