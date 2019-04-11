@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-
+from users.views import MainPageView
+#from django.urls import path
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', MainPageView.as_view(), name="main"),
     url(r'^groups/', include('groups.urls')),
     url(r'^users/', include('users.urls')),
+
 ]

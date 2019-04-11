@@ -13,9 +13,8 @@
 
         <div class="card">
             <p class="card-text">
-                id: {{ user.id }}<br>
                 Name of Groups: {{ user.name }}<br>
-                Description: {{ user.group }}
+                Description: {{ user.groups }}
             </p>
             <p>
                 {% if request.user.is_authenticated %}
